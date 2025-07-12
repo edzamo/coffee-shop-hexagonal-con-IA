@@ -11,3 +11,8 @@
 .env
 .DS_Store
 .vscode/
+
+# Gradle Wrapper files
+gradlew
+gradlew.bat
+gradle/
