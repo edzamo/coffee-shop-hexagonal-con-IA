@@ -1,0 +1,177 @@
+openapi: 3.0.3
+info:
+  title: Coffee Shop API
+  description: |-
+    API para gestionar pedidos de una cafetería.
+    Esta API permite crear, actualizar, consultar y cancelar pedidos.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Servidor de desarrollo
+tags:
+  - name: Orders
+    description: Operaciones sobre los pedidos
+
+paths:
+  /order:
+    post:
+      tags:
+        - Orders
+      summary: Crear un nuevo pedido
+      description: Registra un nuevo pedido de café.
+      operationId: createOrder
+      requestBody:
+        description: Detalles del pedido
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '201':
+          description: Pedido creado exitosamente
+          headers:
+            Location:
+              description: La URL del pedido recién creado.
+              schema:
+                type: string
+                format: uri
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Datos de entrada inválidos
+
+  /order/{id}:
+    get:
+      tags:
+        - Orders
+      summary: Buscar pedido por ID
+      description: Devuelve un único pedido.
+      operationId: getOrderById
+      parameters:
+        - name: id
+          in: path
+          description: ID del pedido a devolver
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Operación exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '404':
+          description: Pedido no encontrado
+    post:
+      tags:
+        - Orders
+      summary: Actualizar un pedido existente
+      description: Actualiza un pedido con nuevos productos o detalles.
+      operationId: updateOrder
+      parameters:
+        - name: id
+          in: path
+          description: ID del pedido a actualizar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: Objeto del pedido que necesita ser actualizado
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrderRequest'
+      responses:
+        '200':
+          description: Pedido actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: ID proporcionado inválido
+        '404':
+          description: Pedido no encontrado
+    delete:
+      tags:
+        - Orders
+      summary: Cancelar un pedido
+      description: Cancela un pedido existente.
+      operationId: cancelOrder
+      parameters:
+        - name: id
+          in: path
+          description: ID del pedido a cancelar
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Pedido cancelado exitosamente
+        '404':
+          description: Pedido no encontrado
+
+components:
+  schemas:
+    OrderRequest:
+      type: object
+      required:
+        - location
+        - items
+      properties:
+        location:
+          type: string
+          enum: [IN_STORE, TAKE_AWAY]
+          example: "IN_STORE"
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LineItem'
+    LineItem:
+      type: object
+      required:
+        - drink
+        - milk
+        - size
+        - quantity
+      properties:
+        drink:
+          type: string
+          enum: [LATTE, ESPRESSO, CAPPUCCINO]
+        milk:
+          type: string
+          enum: [WHOLE, SKIMMED, SOY]
+        size:
+          type: string
+          enum: [SMALL, MEDIUM, LARGE]
+        quantity:
+          type: integer
+          format: int32
+          minimum: 1
+    OrderResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        location:
+          type: string
+          enum: [IN_STORE, TAKE_AWAY]
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/LineItem'
+        cost:
+          type: number
+          format: double
+        status:
+          type: string
+          enum: [PENDING_PAYMENT, PAID, PREPARING, COMPLETED, CANCELLED]
