@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Servicio de la base de datos MySQL
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword # Puedes cambiar esto por una contraseña más segura
+      MYSQL_DATABASE: coffee-shop
+      MYSQL_USER: ezamora
+      MYSQL_PASSWORD: ezamora
+    ports:
+      # Expone el puerto de MySQL al host para que puedas conectarte con un cliente de BD si lo necesitas
+      - "3306:3306"
+    volumes:
+      # Persiste los datos de la base de datos para que no se pierdan al reiniciar el contenedor
+      - mysql_data:/var/lib/mysql
+
+
+
+volumes:
+  mysql_data:
+

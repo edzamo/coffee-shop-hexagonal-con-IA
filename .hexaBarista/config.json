@@ -1,0 +1,9 @@
+{
+  "instructions": {
+    "language": "spanish and english",
+    "style": "Sigue los principios de Clean Code y SOLID. Usa camelCase para métodos y variables. Escribe comentarios claros en español o inglés cuando sea posible. // Follow Clean Code and SOLID principles. Use camelCase for methods and variables. Use clear comments in Spanish or English when possible.",
+    "framework": "Spring Boot con arquitectura hexagonal (puertos y adaptadores), Gradle, Java 17 o 21. // Spring Boot using hexagonal architecture (ports and adapters), Gradle, Java 17 or 21.",
+    "avoid": "No mezcles lógica de negocio en los controladores. Evita programación reactiva a menos que sea requerida. // Do not mix business logic in controllers. Avoid reactive programming unless explicitly needed.",
+    "focus": "Estructura modular: domain, application, infrastructure. Testing con JUnit 5 y Mockito. Usa DTOs para exponer entidades. Separa pruebas unitarias y de integración. // Modular layered structure: domain, application, infrastructure. Testing with JUnit 5 and Mockito. Use DTOs when exposing domain entities. Separate unit and integration tests."
+  }
+}
