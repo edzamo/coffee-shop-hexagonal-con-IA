@@ -16,6 +16,13 @@ This experiment shows that AI, when properly guided, can assist technical develo
 
 ---
 
+## 📖 Core Reference: Hexagonal Architecture Explained
+
+For a foundational understanding of hexagonal architecture, this project is based on the excellent article by Arho Huttunen:
+🔗 [Hexagonal Architecture with Spring Boot – arhohuttunen.com](https://www.arhohuttunen.com/hexagonal-architecture-spring-boot/)
+
+---
+
 ## 🧡 What's included in this POC?
 
 * 🧹 Hexagonal architecture: decoupled inputs/outputs, clean domain.

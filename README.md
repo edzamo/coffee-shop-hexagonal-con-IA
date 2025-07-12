@@ -7,6 +7,13 @@ El objetivo es demostrar lo cómodo y poderoso que puede ser el uso de IA para g
 
 ---
 
+## 📖 Referencia principal: Arquitectura Hexagonal explicada
+
+Para entender el enfoque base de este proyecto, revisa este excelente artículo:  
+🔗 [arhohuttunen.com/hexagonal-architecture-spring-boot](https://www.arhohuttunen.com/hexagonal-architecture-spring-boot/)
+
+---
+
 ## 👁️‍🗨️ ¿Qué quiero probar?
 
 ¿Hasta dónde podemos llegar construyendo un microservicio profesional con IA como copiloto?  
@@ -36,6 +43,7 @@ Usar IA para codificar no se trata simplemente de pedirle código.
 Es enseñarle el **contexto de tu proyecto**, guiarla con **prompts claros**, y revisar cada respuesta con sentido crítico.
 
 Durante este desarrollo, descubrí que la IA puede:
+
 - Entender patrones complejos como la arquitectura hexagonal.
 - Generar clases coherentes y bien nombradas.
 - Sugerir pruebas unitarias efectivas.
@@ -50,6 +58,7 @@ Durante este desarrollo, descubrí que la IA puede:
 Herramientas como Copilot y Gemini no solo aceleran el trabajo, sino que también ayudan a mantener la coherencia y calidad en el código.
 
 Se convierten en asistentes técnicos constantes que:
+
 - 🧠 Disminuyen el esfuerzo repetitivo.
 - ⚙️ Respetan tu estilo y convenciones.
 - 🚀 Te permiten concentrarte en la lógica de negocio y decisiones de arquitectura.
@@ -78,6 +87,7 @@ Este proyecto no solo demuestra una arquitectura funcional, sino también **cóm
 Cuando se le guía bien, la IA permite desarrollar más rápido sin sacrificar diseño ni calidad.
 
 Si quieres probarlo tú mismo:
+
 1. Explora la carpeta `.heHexaBarista`.
 2. Instala GitHub Copilot o Gemini.
 3. Crea con IA como tu aliada técnica. 🚀
