@@ -48,7 +48,6 @@ class CoffeeShopTest {
     }
 
 
-
     @Test
     void findOrderById_shouldReturnOrder() {
         // Given
