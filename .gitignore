@@ -1,4 +1,5 @@
 /build/
+/bin/
 /out/
 .gradle/
 .idea/
@@ -16,3 +17,6 @@
 gradlew
 gradlew.bat
 gradle/
+gradle/wrapper/
+/bin/gradle-wrapper.jar
+/bin/main/

@@ -1,4 +1,4 @@
-# 🧠 Microservice with Hexagonal Architecture using AI (Copilot + Gemini + Spring Boot)
+## 🧠 Microservice with Hexagonal Architecture using AI (Copilot + Gemini + Spring Boot)
 
 ## 🚀 Introduction
 
